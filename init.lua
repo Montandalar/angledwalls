@@ -12,3 +12,5 @@ end
 if minetest.get_modpath("quartz") then
 	dofile(minetest.get_modpath("angledwalls").."/quartz.lua")
 end
+
+dofile(minetest.get_modpath("angledwalls").."/recipes.lua")

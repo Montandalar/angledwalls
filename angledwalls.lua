@@ -462,3 +462,25 @@ angledwalls.register_angled_wall_and_low_angled_wall_and_corner("snow", "default
 		"Snow Low Angled Wall",
 		"Snow Corner",
 		default.node_sound_glass_defaults())
+
+--Recipes by otterwise
+
+angledwalls.register_recipes = function(angwa_mat)
+    minetest.register_craft({
+        output = 'angledwalls:angled_wall' .. angwa_mat .. " 10",
+        recipe = {
+            {'', 'default:' .. angwa_mat, 'default:' .. angwa_mat},
+            {'default:' .. angwa_mat, 'default:' .. angwa_mat, 'default:' .. angwa_mat},
+            {'default:' .. angwa_mat, 'default:' .. angwa_mat, ''},
+        }
+    })
+
+    minetest.register_craft({
+        output = 'angledwalls:low_angled_wall' .. angwa_mat .. " 10",
+        recipe = {
+            {'', 'default:slab_' .. angwa_mat, 'default:slab_' .. angwa_mat},
+            {'default:slab_' .. angwa_mat, 'default:slab_' .. angwa_mat, 'default:slab_' .. angwa_mat},
+            {'default:slab_' .. angwa_mat, 'default:slab_' .. angwa_mat, ''},
+        }
+    })
+end
